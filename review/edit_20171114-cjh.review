@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Review id="edit_20171114">
+  <ReviewIssue id="J9Z78RHI">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2017-11-14 :: 13:50:41:190 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2017-11-14 :: 13:50:53:016 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>cjh</ReviewerId>
+    <AssignedTo>ccf</AssignedTo>
+    <File></File>
+    <Type>item.label.unset</Type>
+    <Severity>item.label.unset</Severity>
+    <Summary></Summary>
+    <Description></Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="J9Z79JNO">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2017-11-14 :: 13:51:17:700 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2017-11-14 :: 14:07:26:640 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>cjh</ReviewerId>
+    <AssignedTo>ccf</AssignedTo>
+    <File></File>
+    <Type>item.label.unset</Type>
+    <Severity>item.label.unset</Severity>
+    <Summary>提交走查代码bug</Summary>
+    <Description>提交走查结束</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.closed</Status>
+  </ReviewIssue>
+</Review>

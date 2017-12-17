@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Review id="edit_20171114">
+  <ReviewIssue id="J9Z5I1N5">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2017-11-14 :: 13:01:55:025 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2017-11-14 :: 14:06:44:864 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>ccf</ReviewerId>
+    <AssignedTo>ccf</AssignedTo>
+    <File></File>
+    <Type>item.label.unset</Type>
+    <Severity>item.label.unset</Severity>
+    <Summary>提交走查代码bug</Summary>
+    <Description>走查任务结束</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.closed</Status>
+  </ReviewIssue>
+</Review>

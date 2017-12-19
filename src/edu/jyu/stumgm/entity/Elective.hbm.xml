@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="edu.jyu.stumgm.entity">
+	<class name="Elective" table="ELECTIVE">
+		<id name="keyId" column="id">
+			<generator class="native" />
+		</id>
+		<property name="courseId" length="20"  type="string" column="course_id"></property>	
+		<property name="studentId" length="20"  type="string" column="student_id"></property>	
+		<property name="grade" length="4"></property>
+		<property name="close" length="2"></property>
+	</class>
+</hibernate-mapping>

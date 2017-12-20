@@ -5,6 +5,7 @@ import java.util.List;
 
 import edu.jyu.stumgm.dao.IStudentDAO;
 import edu.jyu.stumgm.entity.Student;
+import edu.jyu.stumgm.util.base64Util;
 
 public class StudentBO {
 	private IStudentDAO studentDAO;
@@ -55,6 +56,21 @@ public class StudentBO {
 		}
 		return null;
 	}
+	
+	public Student login(String userName, String password) {
+		String decodeUserName = new String(base64Util.decode(userName));
+		String decodePassword = new String(base64Util.decode(password));
+		Student stu = studentDAO.get(decodeUserName);
+		if (stu != null) {
+			if(stu.getStuNumber().equals(decodePassword)) {
+				return stu;
+			}else{
+				return null;
+			}
+		}
+		return null;
+	}
+	
 	/**
 	 * 按指定的条件搜索Student列表
 	 * 

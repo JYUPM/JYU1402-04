@@ -30,6 +30,11 @@ public class LogoutAction extends ActionSupport {
 		if(sessionMap.get("user") != null){
 			sessionMap.remove("user");
 			if(sessionMap.get("isAdmin")!=null) sessionMap.remove("isAdmin");
+			if(sessionMap.get("isTeacher")!=null) sessionMap.remove("isTeacher");
+		}
+		if(sessionMap.get("students") != null){
+			sessionMap.remove("students");
+			if(sessionMap.get("isStudent")!=null) sessionMap.remove("isStudent");
 		}
 		return SUCCESS;
 	}

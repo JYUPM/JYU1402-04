@@ -16,7 +16,7 @@
 		<property name="email" length="20" type="string"></property>
 		<property name="postID" length="20" type="string" column="post_code"></property>
 		<property name="address" length="20" type="string"></property>
-		
+		<property name="role" length="4" ></property>
 		<one-to-one name="grade" property-ref="student" class="Grade" cascade="all" fetch="join" ></one-to-one>
 	</class>
 </hibernate-mapping>

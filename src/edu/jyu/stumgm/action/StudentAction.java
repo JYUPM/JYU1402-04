@@ -62,6 +62,7 @@ public class StudentAction extends ActionSupport {
 			stuid = studentBO.generateStuNumber();
 			return "add";
 		}
+		student.setRole(3);
 		studentBO.addStudent(student);
 		return "list";
 	}

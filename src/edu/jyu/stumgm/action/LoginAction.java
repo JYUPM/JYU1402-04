@@ -4,8 +4,11 @@ import org.apache.log4j.Logger;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+
 import edu.jyu.stumgm.Common;
+import edu.jyu.stumgm.bo.StudentBO;
 import edu.jyu.stumgm.bo.UserBO;
+import edu.jyu.stumgm.entity.Student;
 import edu.jyu.stumgm.entity.User;
 
 public class LoginAction extends ActionSupport {
@@ -16,7 +19,16 @@ public class LoginAction extends ActionSupport {
 	private String password = "";
 	private boolean loginError = false;
 	private UserBO userBO;
+	private StudentBO studentBO;
 	
+	public StudentBO getStudentBO() {
+		return studentBO;
+	}
+
+	public void setStudentBO(StudentBO studentBO) {
+		this.studentBO = studentBO;
+	}
+
 	public UserBO getUserBO() {
 		return userBO;
 	}
@@ -45,8 +57,11 @@ public class LoginAction extends ActionSupport {
 		return loginError;
 	}
 
+	@SuppressWarnings("null")
 	public String execute(){
 		logger.info("login");
+		User user = null;
+		Student student = null;
 		if(ActionContext.getContext().getSession().get("user") != null){
 			return SUCCESS;
 		}
@@ -54,19 +69,32 @@ public class LoginAction extends ActionSupport {
 		if ("".equals(userName) || "".equals(password)) {
 			return SUCCESS;
 		}
-		User user = userBO.login(userName, password);
-
+		if(userName.length() == 16) {
+			Student stu = studentBO.login(userName, password);
+			if(stu != null) {
+				student = stu;
+			}
+		}else{
+			user = userBO.login(userName, password);
+		}
+		
 		logger.info("login: "+user);
 		if(user != null){
 			ActionContext.getContext().getSession().put("user", user);
-			if (user.getRole().equals(Common.ADMIN_ROLE))
-			{
+			if (user.getRole().equals(Common.ADMIN_ROLE)){
 				ActionContext.getContext().getSession().put("isAdmin", true);
+			}else if(user.getRole().equals(Common.TEACHER_ROLE)){
+				ActionContext.getContext().getSession().put("isTeacher", true);
 			}
-
+			return SUCCESS;
+		}else if(student != null) {
+			ActionContext.getContext().getSession().put("students", student);
+			if(String.valueOf(student.getRole()).equals(Common.STUDENT_ROLE)){
+				ActionContext.getContext().getSession().put("isStudent", true);
+			}
 			return SUCCESS;
 		}
-
+		
 		loginError = true;
 		return SUCCESS;
 	}

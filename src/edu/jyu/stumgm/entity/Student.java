@@ -11,7 +11,15 @@ public class Student {
 	private String email;//电子信箱
 	private String postID;//邮政编码
 	private String address;//通讯地址
+	private int role; //角色
 	
+	public int getRole() {
+		return role;
+	}
+
+	public void setRole(int role) {
+		this.role = role;
+	}
 	private Grade grade;
 	
 	public Student()
@@ -81,5 +89,15 @@ public class Student {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [stuNumber=" + stuNumber + ", username=" + username
+				+ ", gender=" + gender + ", city=" + city + ", identityID="
+				+ identityID + ", phone=" + phone + ", email=" + email
+				+ ", postID=" + postID + ", address=" + address + ", role="
+				+ role + ", grade=" + grade + "]";
 	}	
+	
 }

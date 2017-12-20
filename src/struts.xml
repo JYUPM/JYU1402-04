@@ -75,7 +75,7 @@
             	<param name="namespace">/</param>
         	</result>
         	<result name="list" type="redirectAction">
-            	<param name="actionName">gradeList</param>
+            	<param name="actionName">gradeAdmin</param>
             	<param name="namespace">/</param>
         	</result>
         	<result name="add">/jsp/grade/creategrade.jsp</result>
@@ -99,6 +99,62 @@
 		<action name="gradeSearch" class="edu.jyu.stumgm.action.GradeSearchAction">
 			<result>/jsp/grade/gradequery.jsp</result>
 		</action>
+	</package>
+	
+	<package name="expand" extends="securityControl" namespace="/">
+		<action name="expandList">
+			<result>/jsp/expand/index.jsp</result>
+		</action>
+		<action name="userManagement" class="edu.jyu.stumgm.action.UserManageAction">
+			<result>/jsp/expand/userManagement.jsp</result>
+		</action>
+		<action name="courseManagement" class="edu.jyu.stumgm.action.CourseManageAction">
+			<result>/jsp/expand/courseManagement.jsp</result>
+		</action>
+		<action name="electiveManagement" class="edu.jyu.stumgm.action.ElectiveManagentAction">
+			<result>/jsp/expand/electiveManagement.jsp</result>
+		</action>
+		<action name="studentElective" class="edu.jyu.stumgm.action.CourseAction">
+			<result>/jsp/expand/studentElective.jsp</result>
+		</action>
+	</package>
+	<package name="user" extends="securityControl" namespace="/">
+		<action name="*User"  class="edu.jyu.stumgm.action.UserAction"  method="{1}">
+			<result name="add">/jsp/expand/createUser.jsp</result>
+			<result name="edit">/jsp/expand/editUser.jsp</result>
+			<result name="list" type="redirectAction">
+            	<param name="actionName">userManagement</param>
+            	<param name="namespace">/</param>
+        	</result>   	
+		</action>
+		<action name="userManagement" class="edu.jyu.stumgm.action.UserManageAction">
+			<result>/jsp/expand/userManagement.jsp</result>
+		</action>
+	</package>
+	<package name="course" extends="securityControl" namespace="/">
+		<action name="*Course"  class="edu.jyu.stumgm.action.CourseAction"  method="{1}">
+			<result name="add">/jsp/expand/createCourse.jsp</result>
+			<result name="edit">/jsp/expand/editCourse.jsp</result>
+			<result name="list" type="redirectAction">
+            	<param name="actionName">courseManagement</param>
+            	<param name="namespace">/</param>
+        	</result>
+		</action>
+		<action name="courseManagement" class="edu.jyu.stumgm.action.CourseManageAction">
+			<result>/jsp/expand/courseManagement.jsp</result>
+		</action>
 		
+	</package>
+	<package name="elective" extends="securityControl" namespace="/">
+		<action name="*Elective"  class="edu.jyu.stumgm.action.ElectiveAction"  method="{1}">
+			<result name="add">/jsp/expand/electiveCourse.jsp</result>
+			<result name="list" type="redirectAction">
+            	<param name="actionName">studentElective</param>
+            	<param name="namespace">/</param>
+        	</result> 
+		</action>
+		<action name="studentElective" class="edu.jyu.stumgm.action.ElectiveManageAction">
+			<result>/jsp/expand/studentElective.jsp</result>
+		</action>
 	</package>
 </struts>    

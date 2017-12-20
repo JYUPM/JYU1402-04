@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+*{
+	margin:0;
+	font-size:12px;
+	font-family:宋体;
+}
+
+body{
+	text-align:center;	
+}
+.menu{
+	width:820px;
+	height:26px;
+	background: url(../pic/line.jpg);
+	line-height:26px;
+}
+.menu-link{
+	color:#333333;
+}
+
+.main-body-left{
+	margin-bottom: 15px;
+}

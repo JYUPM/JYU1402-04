@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="edu.jyu.stumgm.entity">
+	<class name="Course" table="COURSE">
+		<id name="keyId" column="id">
+			<generator class="native" />
+		</id>
+		<property name="courseId" length="20"  type="string" column="course_id"></property>	
+		<property name="courseName" length="20"  type="string" column="course_name"></property>	
+		<property name="courseTime" length="4" column="course_time"></property>
+		<property name="courseCredit" length="4" column="course_credit"></property>
+		<property name="teacherId" length="4" column="teacher_id"></property>
+	</class>
+</hibernate-mapping>
